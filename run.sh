@@ -16,14 +16,18 @@
 # echo "scale=2; $1 * 100 + $2 * 0.5 + $3" | bc
 
 # TODO: Replace this with your actual implementation
-#echo "TODO: Implement your reimbursement calculation here"
-#echo "Input: $1 days, $2 miles, \$$3 receipts"
-#echo "Output should be a single number (the reimbursement amount)" 
 
-if [ "$#" -ne 4 ]; then
-    echo "Usage: $0 <trip_duration_days> <miles_traveled> <total_receipts_amount> <submission_date>" >&2
+#!/bin/bash
+
+# Black Box Challenge - Python Implementation
+# This script takes three parameters and outputs the reimbursement amount
+# Usage: ./run.sh <trip_duration_days> <miles_traveled> <total_receipts_amount>
+
+# Check for correct number of arguments
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <trip_duration_days> <miles_traveled> <total_receipts_amount>" >&2
     exit 1
 fi
 
 # Python implementation
-python3 calculate_reimbursement.py "$1" "$2" "$3" "$4"
+python calculate_reimbursement.py "$1" "$2" "$3"
